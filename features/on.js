@@ -33,8 +33,7 @@ module.exports = function(controller) {
     if (cuisineId >= 0) {
       const { data } = await axios({
         method: 'GET',
-        url:
-          'https://developers.zomato.com/api/v2.1/search?entity_id=94741&entity_type=zone&cuisines=25',
+        url: `https://developers.zomato.com/api/v2.1/search?entity_id=94741&entity_type=zone&cuisines=${cuisineId}`,
         headers: {
           'user-key': process.env.ZOMATO_KEY,
           'content-type': 'application/json',

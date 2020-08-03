@@ -52,7 +52,7 @@ module.exports = function(controller) {
     } else {
       await bot.reply(
         message,
-        `What cuisine are you in the mood for? You can also type "help" for some options.`
+        `Sorry, I don't understand that. What cuisine are you in the mood for? You can also type "help" for some options.`
       );
     }
   });

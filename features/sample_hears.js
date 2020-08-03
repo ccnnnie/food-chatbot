@@ -6,6 +6,17 @@
 const axios = require('axios');
 
 module.exports = function(controller) {
+  controller.hears(
+    [new RegExp(/^hi/i), 'hello', 'howdy', 'hey'],
+    'message,direct_message',
+    async (bot, message) => {
+      await bot.reply(
+        message,
+        'Hi there! Are you hungry? You can also type "help" for some options.'
+      );
+    }
+  );
+
   // use a function to match a condition in the message
   controller.hears(
     async (message) => message.text && message.text.toLowerCase() === 'help',
